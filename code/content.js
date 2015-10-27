@@ -1,3 +1,6 @@
+/*Insert the url of the page receiving */
+var url = 'https://extranet.kiwi.ca/hoop/hoop-app.nsf/kanban.html?openPage';
+
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
   if (msg.command && (msg.command == "openKanban")) {
 	 var main = $('.object_view_main'),
@@ -33,7 +36,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 		description = description.substring(0,800) + " ...";
 	}
 	
-	appendToUrl[i++] = '&id='+ encodeURIComponent(id);
+	appendToUrl[i++] = '?id='+ encodeURIComponent(id);
 	appendToUrl[i++] = '&project=' + encodeURIComponent(project);
 	appendToUrl[i++] = '&taskList=' + encodeURIComponent(taskList);
 	appendToUrl[i++] = '&title=' + encodeURIComponent(title);
@@ -44,6 +47,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 	appendToUrl[i++] = '&createdBy=' + encodeURIComponent(createdBy);
 	appendToUrl[i++] = '&createdOn=' + encodeURIComponent(createdOn);
 		
-	window.open('https://extranet.kiwi.ca/hoop/hoop-app.nsf/kanban.html?openPage' + appendToUrl.join(''),'_blank');
+	sendResponse({appendToUrl : appendToUrl.join('')});
+	//window.open(url + appendToUrl.join(''),'_blank');
   }
 });

@@ -2,8 +2,10 @@ var openKanban = function(tab) {
   chrome.tabs.sendMessage(tab.id, {
       command: "openKanban"
     },
-    function(msg) {
-      console.log("result message:", msg);
+    function(response) {
+		chrome.tabs.create({'url': chrome.extension.getURL('kanban.html' + response.appendToUrl)}, function(tab) {
+	  
+		});
     });
 }
 
