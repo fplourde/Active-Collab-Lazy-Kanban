@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>"Lazy Kanban"</title>
+<style>
+	@page {
+		margin : 0;
+	}
+	.kanban {
+		width:600px;
+		border : 1px solid black;
+		margin:auto;
+	}
+	.header {
+		padding : 8px;
+	}
+	.body{
+		padding : 8px;
+		border-top : 1px solid black;
+		border-bottom : 1px solid black;
+		height: 300px;
+		overflow : hidden;		
+	}
+	.footer {
+		padding : 8px;
+		height : 17px;
+	}
+	.task-num {
+		float : right;
+		font-size : 22px;
+	}
+	.task-num::before{
+		content: "#";
+	}
+	.task-list{
+		font-size : 22px;
+	}
+	.task-title {
+		font-size : 28px;
+	}
+	.task-desc {
+		padding-top:20px;
+	}
+</style>
+<script src="jquery.min.js"></script>
+</head>
+<body style="" onload="">
+<thead>
+</thead>
+	<div style="" class="container">
+	<br><br>
+		<div class="kanban">
+			<div class="header">
+				<span class="task-list"></span>
+				<span class="task-num"></span>
+				<BR>
+				<span class="task-project"></span>
+			</div>
+			<div class="body">
+				<div class="task-title">
+				</div>
+				<div class="task-desc">
+				</div>
+			</div>
+			<div class="footer">
+				<span class="task-estimate"></span>
+			</div>
+		</div>
+	</div>
+<tfoot>
+</tfoot>
+<script src="kanban.js"></script>
+</body>
+</html>
