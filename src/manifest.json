@@ -1,7 +1,7 @@
 {
   "manifest_version" : 2,
   "minimum_chrome_version" : "18",
-  "version" : "0.2.1",
+  "version" : "0.2.2",
   "name": "Lazy Kanban for Active Collab 5",
   "description": "Print the Kanban Card for tasks in Active Collab 5",
   "browser_action": {

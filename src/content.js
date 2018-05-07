@@ -19,7 +19,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
 	};	
 	
 	var id = main.find('.project_object_location [ng-bind="task.task_number"]').html() || '',
-		project = main.find('.project_object_location a').html() || '',
+		project = $('.project_header h1').html() || '',
 		taskList = sideBar.find('.slim_control_label').html() || '',
 		title = main.find('span.task_name').html() || '',
 		description = main.find('.rich_text').html() || '',
